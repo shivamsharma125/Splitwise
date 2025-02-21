@@ -18,7 +18,7 @@ public class Group extends BaseModel {
     joinColumns = @JoinColumn(name = "group_id"),
     inverseJoinColumns = @JoinColumn(name = "user_id"))
     private List<User> users;
-    @OneToMany(mappedBy = "group")
+    @OneToMany(mappedBy = "group", fetch = FetchType.EAGER)
     private List<Expense> expenses; // [1:M]
     @Enumerated(EnumType.ORDINAL)
     private GroupType groupType;

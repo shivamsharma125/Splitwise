@@ -16,4 +16,5 @@ public class User extends BaseModel {
     private String password;
     @ManyToMany(mappedBy = "users")
     private List<Group> groups; // [M:M]
+    private UserSubscriptionType subscriptionType;
 }
