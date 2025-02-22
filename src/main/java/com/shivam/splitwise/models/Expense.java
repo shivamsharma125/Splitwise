@@ -1,9 +1,6 @@
 package com.shivam.splitwise.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,4 +19,6 @@ public class Expense extends BaseModel {
     @ManyToOne
     @JoinColumn(name = "group_id")
     private Group group;
+    @Enumerated(EnumType.ORDINAL)
+    private ExpenseType expenseType;
 }
