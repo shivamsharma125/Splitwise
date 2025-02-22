@@ -1,6 +1,8 @@
 package com.shivam.splitwise.models;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.ManyToMany;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,6 +19,7 @@ public class User extends BaseModel {
     private String password;
     @ManyToMany(mappedBy = "users")
     private List<Group> groups; // [M:M]
+    @Enumerated(EnumType.ORDINAL)
     private UserSubscriptionType subscriptionType;
 
     @Override

@@ -4,12 +4,11 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
 import java.util.List;
 
 @Getter
 @Setter
-@Entity(name = "groups")
+@Entity(name = "`groups`")
 public class Group extends BaseModel {
     private String name;
     private String description;
@@ -23,5 +22,6 @@ public class Group extends BaseModel {
     @Enumerated(EnumType.ORDINAL)
     private GroupType groupType;
     @ManyToOne
+    @JoinColumn(name = "admin_id")
     private User createdBy; // (admin) [M:1]
 }

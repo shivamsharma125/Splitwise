@@ -15,6 +15,7 @@ import java.util.List;
 public class Expense extends BaseModel {
     private String description;
     @ManyToOne
+    @JoinColumn(name = "user_id")
     private User createdBy; // [M:1]
     @OneToMany(mappedBy = "expense")
     private List<ExpensePayment> expensePayments; // [1:M]
